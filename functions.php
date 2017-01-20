@@ -88,25 +88,25 @@ $slides = array();
 
   if ($slides) {
 
-    $slides = array_reverse($slides);
+    //$slides = array_reverse($slides);
 
     $slide_text = "";
 
     foreach ($slides as $slid) {
       # code...
       $t = ''.$slid;
-      $slide_text .= '<li>'.$slid.'</li><br>';
+      $slide_text .= '<li>'. sanitize_text_field( $slid ).'</li>';
 
     }
   }
 
 
 
-	return '<div class="main flexslider">'.
-        		'<ul class="slides">'.
+  return '<div class="main flexslider">'.
+            '<ul class="slides">'.
             ''.$slide_text . ''.
             '</ul>'.
-        	'</div>';
+          '</div>';
 
 
 }
@@ -129,7 +129,6 @@ $slides = array();
   }
 
 
-
   if ($slides) {
 
     $slides = array_reverse($slides);
@@ -139,18 +138,18 @@ $slides = array();
     foreach ($slides as $slid) {
       # code...
       $t = ''.$slid;
-      $slide_text .= '<li>'.$slid.'</li><br>';
+      $slide_text .= '<li>'. sanitize_text_field( $slid ).'</li>';
 
     }
   }
 
 
 
-	return '<div class="main flexslider">'.
-        		'<ul class="slides">'.
+  return '<div class="main flexslider">'.
+            '<ul class="slides">'.
             ''.$slide_text . ''.
             '</ul>'.
-        	'</div>';
+          '</div>';
 
 
 }
